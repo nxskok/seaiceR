@@ -23,7 +23,7 @@ map showing points labelled by location
 Map of locations with colours and/or sizes
 }
 \examples{
-draw_map(nine_points_locations, bounding_box=c(-87.5, 71, -82.5, 74), zoom=5)
+draw_map(nine_points_locations, bounding_box=c(-87.5, 71, -82.5, 74), zoom=6)
 
 }
 \author{
