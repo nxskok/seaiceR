@@ -7,13 +7,17 @@
 make_long(d)
 }
 \arguments{
-\item{d}{data frame in wide format (years in column 1, locations in other columns)}
+\item{d}{data frame in wide format (years in column 1, called `year`, locations in other columns)}
 }
 \value{
 data frame in long format with one row per observation
 }
 \description{
 Make wide data long
+}
+\examples{
+make_long(nine_points)
+
 }
 \author{
 Ken Butler, \email{butler@utsc.utoronto.ca}

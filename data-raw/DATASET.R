@@ -1,3 +1,6 @@
 ## code to prepare `DATASET` dataset goes here
-example_data <- readRDS(url("http://www.utsc.utoronto.ca/~butler/sea_ice_data.rds"))
-usethis::use_data("example_data")
+nine_points <- readRDS(url("http://www.utsc.utoronto.ca/~butler/sea_ice_data.rds"))
+usethis::use_data(nine_points)
+
+nine_points_long <- make_long(nine_points)
+usethis::use_data(nine_points_long)

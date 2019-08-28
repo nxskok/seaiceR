@@ -6,11 +6,29 @@
 #' @author Ken Butler, \email{butler@utsc.utoronto.ca}
 #'
 #' @examples
-make_long(example_data)
+#' make_long(nine_points)
+#'
 #' @export
 #'
-make_long=function(d) {
+make_long <- function(d) {
   d %>% tidyr::gather(location, day, -year) %>%
     dplyr::mutate(location=as.numeric(location)) -> d_long
   d_long
+}
+
+#' Make long data wide
+#'
+#' @param d data frame in long format (year, location, day)
+#' @return data frame in wide format (column of years, one column per location)
+#'
+#' @author Ken Butler, \email{butler@utsc.utoronto.ca}
+#'
+#' @examples
+#' make_wide(nine_points_long) # should be same as nine_points
+#'
+#' @export
+#'
+make_wide <- function(d) {
+  d %>% tidyr::spread(location, day) -> d_wide
+  d_wide
 }

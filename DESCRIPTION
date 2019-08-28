@@ -13,7 +13,9 @@ LazyData: true
 Imports: 
     mkac,
     tidyr,
-    dplyr
+    dplyr,
+    magrittr,
+    ggplot2
 URL: https://github.com/nxskok/seaiceR
 BugReports: https://github.com/nxskok/seaiceR/issues
 RoxygenNote: 6.1.1
