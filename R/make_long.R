@@ -1,1 +1,2 @@
-#' Make wide
+#' Make wide data long
+#'
