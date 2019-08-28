@@ -1,5 +1,5 @@
 Package: seaiceR
-Title: What the Package Does (One Line, Title Case)
+Title: Analysis of Temporal and Spatial Trends in Sea Ice
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Ken",
@@ -11,6 +11,9 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    mkac
+    mkac,
+    tidyr,
+    dplyr
 URL: https://github.com/nxskok/seaiceR
 BugReports: https://github.com/nxskok/seaiceR/issues
+RoxygenNote: 6.1.1
