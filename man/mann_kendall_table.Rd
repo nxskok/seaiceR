@@ -16,6 +16,7 @@ ratio: Effective sample size ratio: greater than 1 = positive autocorrelation, l
 P_value: Basic Mann-Kendall P-value;
 P_value_adj: Mann-Kendall P-value adjusted for autocorrelation;
 P_value_2, P_value_adj_2: text versions of P-values formatted to not be in scientific notation (easier to read by human).
+colour: colour-coded significance level
 }
 \description{
 Significance of Mann-Kendall test for trend, summarized

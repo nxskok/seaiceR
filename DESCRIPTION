@@ -16,7 +16,11 @@ Imports:
     dplyr,
     magrittr,
     ggplot2,
-    purrr
+    purrr,
+    rworldmap,
+    ggmap,
+    ggrepel,
+    forcats
 URL: https://github.com/nxskok/seaiceR
 BugReports: https://github.com/nxskok/seaiceR/issues
 RoxygenNote: 6.1.1

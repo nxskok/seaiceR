@@ -8,6 +8,7 @@
 #' P_value: Basic Mann-Kendall P-value;
 #' P_value_adj: Mann-Kendall P-value adjusted for autocorrelation;
 #' P_value_2, P_value_adj_2: text versions of P-values formatted to not be in scientific notation (easier to read by human).
+#' colour: colour-coded significance level
 #'
 #' @author Ken Butler, \email{butler@utsc.utoronto.ca}
 #'
@@ -23,7 +24,8 @@ mann_kendall_table=function(d_long){
     dplyr::mutate(MK=purrr::map(data, ~as_tibble(mkac::kendall_Z_adjusted(.$day)))) %>%
     tidyr::unnest(MK) %>%
     dplyr::mutate(P_value_2=format(P_value, scientific=F)) %>%
-    dplyr::mutate(P_value_adj_2=format(P_value_adj, scientific=F)) -> mann_kendall
+    dplyr::mutate(P_value_adj_2=format(P_value_adj, scientific=F)) %>%
+    dplyr::mutate(P_level=cut(P_value_adj, c(0, 0.01, 0.05, 0.10, 1))) -> mann_kendall
   mann_kendall
 }
 
@@ -45,4 +47,25 @@ mann_kendall_table=function(d_long){
 mk_sig=function(d_long, alpha=0.05) {
   seaiceR::mann_kendall_table(d_long) %>%
     dplyr::count(P_value_adj<=alpha)
+}
+
+
+#' Map of Mann-Kendall significance levels
+#'
+#' @param d_long long format data set
+#' @param locations lats and longs of locations
+#' @param bounding_box bottom left long, lat, top right long, lat (as a vector)
+#' @param zoom zoom factor for stamen map (default 5)
+#'
+#' @result ggplot map of locations coloured by P-level
+#'
+#' @author Ken Butler, \email{butler@utsc.utoronto.ca}
+#'
+#' @examples
+#' mk_map(nine_points_long, nine_points_locations, c(-87.5, 71, -82.5, 74), zoom=6)
+#' @export
+#'
+mk_map=function(d_long, locations, bounding_box, zoom=5) {
+  mk_tab=mann_kendall_table(d_long)
+  draw_map(locations, colours=mk_tab$P_level, bounding_box=bounding_box, zoom=zoom)
 }
