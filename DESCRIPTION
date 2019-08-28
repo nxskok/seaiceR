@@ -12,3 +12,5 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     mkac
+URL: https://github.com/nxskok/seaiceR
+BugReports: https://github.com/nxskok/seaiceR/issues
