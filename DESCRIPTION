@@ -15,7 +15,8 @@ Imports:
     tidyr,
     dplyr,
     magrittr,
-    ggplot2
+    ggplot2,
+    purrr
 URL: https://github.com/nxskok/seaiceR
 BugReports: https://github.com/nxskok/seaiceR/issues
 RoxygenNote: 6.1.1

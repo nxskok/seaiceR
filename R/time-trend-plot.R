@@ -14,7 +14,7 @@
 #'
 time_trend_plot=function(d_long, lowess=TRUE) {
     g <- ggplot2::ggplot(d_long, ggplot2::aes(x=year, y=day))+ggplot2::geom_point()+
-      ggplot2::facet_wrap(~location)
+      ggplot2::facet_wrap(~location) + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90))
     if (lowess) g + ggplot2::geom_smooth(se=F) else g + ggplot2::geom_smooth(se=F, method="lm")
 }
 
