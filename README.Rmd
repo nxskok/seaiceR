@@ -49,6 +49,7 @@ Of course, the initial number of clusters will be a complete guess, but the outp
 
 There is a lot of output. Specifically, in order:
 
+- Time trend graphs for each location, first with lowess trends and second with linear trends.
 - Mann-Kendall temporal trend analysis for each location, including adjustment for autocorrelation. The last column summarizes the P-value as less than 0.01, between 0.01 and 0.05, between 0.05 and 0.10, greater than 0.10 (for use in the map later).
 - Summary of how many Mann-Kendall tests have P-value 0.05 or less.
 - Theil-Sen slopes per year, for each location.
@@ -69,6 +70,20 @@ There is a lot of output. Specifically, in order:
 - if the map looks too "fuzzy" and could stand to be sharpened up, enter a value for `zoom`. This can be anything between 1 and 18; a higher value will be sharper, but entails downloading more map tiles. The default is 5.
 - if you want all the points on the Theil-Sen plot to be bigger or smaller, enter a value for `scaling`. The default is 1, so a value like 2 will make all the points bigger and a value like 0.5 will make them all smaller.
 
+If you want an individual time trend graph  (eg. to copy into another document), get it like this:
+
+```{r}
+time_trend_single(nine_points, loc=6)
+```
+
+or like this to get a linear trend:
+
+```{r}
+time_trend_single(nine_points, loc=6, lowess=FALSE)
+```
+
+
+
+
 Don't be afraid to run several times until you have output that looks nice. R can take it. (There is some repetitiveness in the calculation anyway).
 
-oh, and I need to include time trend graphs as well.

@@ -4,10 +4,10 @@
 \alias{time_trend_single}
 \title{Time trend plot, with linear or lowess trend, for single location}
 \usage{
-time_trend_single(d_long, lowess = TRUE, loc)
+time_trend_single(d, lowess = TRUE, loc)
 }
 \arguments{
-\item{d_long}{data frame in long format (see make_long)}
+\item{d}{data frame in wide format (see make_wide)}
 
 \item{lowess}{if TRUE, add lowess curve; if FALSE, add linear trend (defaults to TRUE)}
 
@@ -20,8 +20,8 @@ ggplot time trend plot for specified location
 Time trend plot, with linear or lowess trend, for single location
 }
 \examples{
-time_trend_single(nine_points_long, loc=6) # with lowess
-time_trend_single(nine_points_long, lowess=FALSE, loc=6) # with line
+time_trend_single(nine_points, loc=6) # with lowess
+time_trend_single(nine_points, lowess=FALSE, loc=6) # with line
 
 }
 \author{

@@ -52,57 +52,73 @@ make_everything(nine_points, nine_points_locations, n_cluster=4)
 #> Source : http://tile.stamen.com/toner-lite/5/8/6.png
 #> $temporal
 #> $temporal[[1]]
-#> # A tibble: 9 x 10
-#>   location data      z z_star ratio P_value P_value_adj P_value_2
-#>      <dbl> <lis> <dbl>  <dbl> <dbl>   <dbl>       <dbl> <chr>    
-#> 1        1 <tib…  3.00   3.00 1     2.71e-3   0.00271   0.002711…
-#> 2        2 <tib…  3.23   3.23 1     1.25e-3   0.00125   0.001246…
-#> 3        3 <tib…  2.77   2.77 1     5.61e-3   0.00561   0.005614…
-#> 4        4 <tib…  2.90   2.90 1     3.76e-3   0.00376   0.003761…
-#> 5        5 <tib…  2.97   3.95 0.564 2.99e-3   0.0000771 0.002991…
-#> 6        6 <tib…  3.26   3.26 1     1.11e-3   0.00111   0.001106…
-#> 7        7 <tib…  2.10   1.85 1.28  3.59e-2   0.0641    0.035942…
-#> 8        8 <tib…  2.76   2.10 1.74  5.71e-3   0.0361    0.005706…
-#> 9        9 <tib…  3.60   3.60 1     3.19e-4   0.000319  0.000318…
-#> # … with 2 more variables: P_value_adj_2 <chr>, P_level <fct>
-#> 
-#> $temporal[[2]]
-#> # A tibble: 2 x 2
-#>   `P_value_adj <= alpha`     n
-#>   <lgl>                  <int>
-#> 1 FALSE                      1
-#> 2 TRUE                       8
-#> 
-#> $temporal[[3]]
-#> # A tibble: 9 x 3
-#>   location data              theil_sen
-#>      <dbl> <list>                <dbl>
-#> 1        1 <tibble [47 × 2]>     0.5  
-#> 2        2 <tibble [47 × 2]>     0.583
-#> 3        3 <tibble [47 × 2]>     0.5  
-#> 4        4 <tibble [48 × 2]>     0.5  
-#> 5        5 <tibble [48 × 2]>     0.56 
-#> 6        6 <tibble [48 × 2]>     0.613
-#> 7        7 <tibble [48 × 2]>     0.789
-#> 8        8 <tibble [48 × 2]>     0.438
-#> 9        9 <tibble [48 × 2]>     0.583
-#> 
-#> $temporal[[4]]
-#> # A tibble: 1 x 7
-#>    mean    SD   min    Q1 median    Q3   max
-#>   <dbl> <dbl> <dbl> <dbl>  <dbl> <dbl> <dbl>
-#> 1 0.563 0.101 0.438   0.5   0.56 0.583 0.789
-#> 
-#> 
-#> $spatial
-#> $spatial[[1]]
-#> Warning in min(x): no non-missing arguments to min; returning Inf
-#> Warning in max(x): no non-missing arguments to max; returning -Inf
-#> Warning in min(x): no non-missing arguments to min; returning Inf
-#> Warning in max(x): no non-missing arguments to max; returning -Inf
+#> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+#> Warning: Removed 3 rows containing non-finite values (stat_smooth).
+#> Warning: Removed 3 rows containing missing values (geom_point).
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
+    #> 
+    #> $temporal[[2]]
+    #> Warning: Removed 3 rows containing non-finite values (stat_smooth).
+    
+    #> Warning: Removed 3 rows containing missing values (geom_point).
+
+<img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
+
+    #> 
+    #> $temporal[[3]]
+    #> # A tibble: 9 x 10
+    #>   location data      z z_star ratio P_value P_value_adj P_value_2
+    #>      <dbl> <lis> <dbl>  <dbl> <dbl>   <dbl>       <dbl> <chr>    
+    #> 1        1 <tib…  3.00   3.00 1     2.71e-3   0.00271   0.002711…
+    #> 2        2 <tib…  3.23   3.23 1     1.25e-3   0.00125   0.001246…
+    #> 3        3 <tib…  2.77   2.77 1     5.61e-3   0.00561   0.005614…
+    #> 4        4 <tib…  2.90   2.90 1     3.76e-3   0.00376   0.003761…
+    #> 5        5 <tib…  2.97   3.95 0.564 2.99e-3   0.0000771 0.002991…
+    #> 6        6 <tib…  3.26   3.26 1     1.11e-3   0.00111   0.001106…
+    #> 7        7 <tib…  2.10   1.85 1.28  3.59e-2   0.0641    0.035942…
+    #> 8        8 <tib…  2.76   2.10 1.74  5.71e-3   0.0361    0.005706…
+    #> 9        9 <tib…  3.60   3.60 1     3.19e-4   0.000319  0.000318…
+    #> # … with 2 more variables: P_value_adj_2 <chr>, P_level <fct>
+    #> 
+    #> $temporal[[4]]
+    #> # A tibble: 2 x 2
+    #>   `P_value_adj <= alpha`     n
+    #>   <lgl>                  <int>
+    #> 1 FALSE                      1
+    #> 2 TRUE                       8
+    #> 
+    #> $temporal[[5]]
+    #> # A tibble: 9 x 3
+    #>   location data              theil_sen
+    #>      <dbl> <list>                <dbl>
+    #> 1        1 <tibble [47 × 2]>     0.5  
+    #> 2        2 <tibble [47 × 2]>     0.583
+    #> 3        3 <tibble [47 × 2]>     0.5  
+    #> 4        4 <tibble [48 × 2]>     0.5  
+    #> 5        5 <tibble [48 × 2]>     0.56 
+    #> 6        6 <tibble [48 × 2]>     0.613
+    #> 7        7 <tibble [48 × 2]>     0.789
+    #> 8        8 <tibble [48 × 2]>     0.438
+    #> 9        9 <tibble [48 × 2]>     0.583
+    #> 
+    #> $temporal[[6]]
+    #> # A tibble: 1 x 7
+    #>    mean    SD   min    Q1 median    Q3   max
+    #>   <dbl> <dbl> <dbl> <dbl>  <dbl> <dbl> <dbl>
+    #> 1 0.563 0.101 0.438   0.5   0.56 0.583 0.789
+    #> 
+    #> 
+    #> $spatial
+    #> $spatial[[1]]
+    #> Warning in min(x): no non-missing arguments to min; returning Inf
+    #> Warning in max(x): no non-missing arguments to max; returning -Inf
+    #> Warning in min(x): no non-missing arguments to min; returning Inf
+    #> Warning in max(x): no non-missing arguments to max; returning -Inf
+
+<img src="man/figures/README-unnamed-chunk-2-3.png" width="100%" />
 
     #> 
     #> $spatial[[2]]
@@ -112,7 +128,7 @@ make_everything(nine_points, nine_points_locations, n_cluster=4)
     #> Warning in min(x): no non-missing arguments to min; returning Inf
     #> Warning in max(x): no non-missing arguments to max; returning -Inf
 
-<img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-4.png" width="100%" />
 
     #> 
     #> $spatial[[3]]
@@ -122,12 +138,12 @@ make_everything(nine_points, nine_points_locations, n_cluster=4)
     #> Warning in min(x): no non-missing arguments to min; returning Inf
     #> Warning in max(x): no non-missing arguments to max; returning -Inf
 
-<img src="man/figures/README-unnamed-chunk-2-3.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-5.png" width="100%" />
 
     #> 
     #> $spatial[[4]]
 
-<img src="man/figures/README-unnamed-chunk-2-4.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-6.png" width="100%" />
 
     #> 
     #> $spatial[[5]]
@@ -137,12 +153,12 @@ make_everything(nine_points, nine_points_locations, n_cluster=4)
     #> Warning in min(x): no non-missing arguments to min; returning Inf
     #> Warning in max(x): no non-missing arguments to max; returning -Inf
 
-<img src="man/figures/README-unnamed-chunk-2-5.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-7.png" width="100%" />
 
     #> 
     #> $spatial[[6]]
 
-<img src="man/figures/README-unnamed-chunk-2-6.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-8.png" width="100%" />
 
     #> 
     #> $spatial[[7]]
@@ -152,12 +168,12 @@ make_everything(nine_points, nine_points_locations, n_cluster=4)
     #> Warning in min(x): no non-missing arguments to min; returning Inf
     #> Warning in max(x): no non-missing arguments to max; returning -Inf
 
-<img src="man/figures/README-unnamed-chunk-2-7.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-9.png" width="100%" />
 
     #> 
     #> $spatial[[8]]
 
-<img src="man/figures/README-unnamed-chunk-2-8.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-10.png" width="100%" />
 
     #> 
     #> $spatial[[9]]
@@ -167,7 +183,7 @@ make_everything(nine_points, nine_points_locations, n_cluster=4)
     #> Warning in min(x): no non-missing arguments to min; returning Inf
     #> Warning in max(x): no non-missing arguments to max; returning -Inf
 
-<img src="man/figures/README-unnamed-chunk-2-9.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-11.png" width="100%" />
 
 Of course, the initial number of clusters will be a complete guess, but
 the output includes a scree plot and dendrograms, so `make_everything`
@@ -175,6 +191,8 @@ can be run a second time with an improved number of clusters.
 
 There is a lot of output. Specifically, in order:
 
+  - Time trend graphs for each location, first with lowess trends and
+    second with linear trends.
   - Mann-Kendall temporal trend analysis for each location, including
     adjustment for autocorrelation. The last column summarizes the
     P-value as less than 0.01, between 0.01 and 0.05, between 0.05 and
@@ -222,8 +240,24 @@ There is a lot of output. Specifically, in order:
     like 2 will make all the points bigger and a value like 0.5 will
     make them all smaller.
 
+If you want an individual time trend graph (eg. to copy into another
+document), get it like this:
+
+``` r
+time_trend_single(nine_points, loc=6)
+#> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+or like this to get a linear trend:
+
+``` r
+time_trend_single(nine_points, loc=6, lowess=FALSE)
+```
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
 Don’t be afraid to run several times until you have output that looks
 nice. R can take it. (There is some repetitiveness in the calculation
 anyway).
-
-oh, and I need to include time trend graphs as well.

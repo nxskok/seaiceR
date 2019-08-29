@@ -20,7 +20,7 @@ time_trend_plot=function(d_long, lowess=TRUE) {
 
 #' Time trend plot, with linear or lowess trend, for single location
 #'
-#' @param d_long data frame in long format (see make_long)
+#' @param d data frame in wide format (see make_wide)
 #' @param lowess if TRUE, add lowess curve; if FALSE, add linear trend (defaults to TRUE)
 #' @param loc character string that identifies location
 #' @return ggplot time trend plot for specified location
@@ -28,12 +28,13 @@ time_trend_plot=function(d_long, lowess=TRUE) {
 #' @author Ken Butler, \email{butler@utsc.utoronto.ca}
 #'
 #' @examples
-#' time_trend_single(nine_points_long, loc=6) # with lowess
-#' time_trend_single(nine_points_long, lowess=FALSE, loc=6) # with line
+#' time_trend_single(nine_points, loc=6) # with lowess
+#' time_trend_single(nine_points, lowess=FALSE, loc=6) # with line
 #'
 #' @export
 #'
-time_trend_single=function(d_long, lowess=TRUE, loc) {
+time_trend_single=function(d, lowess=TRUE, loc) {
+  d_long <- make_long(d)
   d_long %>% dplyr::filter(location==loc) %>%
     ggplot2::ggplot(ggplot2::aes(x=year, y=day))+ggplot2::geom_point() -> g
   if (lowess) g + ggplot2::geom_smooth(se=F) else g + ggplot2::geom_smooth(se=F, method="lm")

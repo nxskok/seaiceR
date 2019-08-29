@@ -10,7 +10,7 @@ make_temporal(d)
 \item{d}{wide-format data set}
 }
 \value{
-list: Mann-Kendall result table, summary of significance, Theil-Sen slopes table, summary.
+list: time trend plots with lowess curves and with linear trends, Mann-Kendall result table, summary of significance, Theil-Sen slopes table, summary.
 }
 \description{
 Make temporal analysis without maps (in first part of spatial analysis)

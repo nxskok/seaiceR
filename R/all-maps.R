@@ -46,7 +46,7 @@ make_spatial <- function(d, locations, bounding_box=F, zoom=5, scaling=1, n_clus
 #'
 #' @param d wide-format data set
 #'
-#' @return list: Mann-Kendall result table, summary of significance, Theil-Sen slopes table, summary.
+#' @return list: time trend plots with lowess curves and with linear trends, Mann-Kendall result table, summary of significance, Theil-Sen slopes table, summary.
 #' @author Ken Butler, \email{butler@utsc.utoronto.ca}
 #'
 #' @examples
@@ -57,11 +57,13 @@ make_spatial <- function(d, locations, bounding_box=F, zoom=5, scaling=1, n_clus
 #'
 make_temporal <- function(d) {
   d_long <- make_long(d)
+  g1 <- time_trend_plot(d_long, lowess=TRUE)
+  g2 <- time_trend_plot(d_long, lowess=FALSE)
   mk_table <- mann_kendall_table(d_long)
   mk_sig_summary <- mk_sig(d_long)
   ts_slopes <- theil_sen_slopes(d_long)
   ts_summary <- theil_sen_summary(d_long)
-  list(mk_table, mk_sig_summary, ts_slopes, ts_summary)
+  list(g1, g2, mk_table, mk_sig_summary, ts_slopes, ts_summary)
 }
 
 #' Make the whole analysis for a data set
