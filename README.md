@@ -224,3 +224,5 @@ There is a lot of output. Specifically, in order:
 Don’t be afraid to run several times until you have output that looks
 nice. R can take it. (There is some repetitiveness in the calculation
 anyway).
+
+oh, and I need to include time trend graphs as well.

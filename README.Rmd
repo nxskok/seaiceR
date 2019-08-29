@@ -70,3 +70,5 @@ There is a lot of output. Specifically, in order:
 - if you want all the points on the Theil-Sen plot to be bigger or smaller, enter a value for `scaling`. The default is 1, so a value like 2 will make all the points bigger and a value like 0.5 will make them all smaller.
 
 Don't be afraid to run several times until you have output that looks nice. R can take it. (There is some repetitiveness in the calculation anyway).
+
+oh, and I need to include time trend graphs as well.
