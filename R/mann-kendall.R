@@ -67,5 +67,5 @@ mk_sig=function(d_long, alpha=0.05) {
 #'
 mk_map=function(d_long, locations, bounding_box, zoom=5) {
   mk_tab=mann_kendall_table(d_long)
-  draw_map(locations, colours=mk_tab$P_level, bounding_box=bounding_box, zoom=zoom)
+  draw_map(locations, colours=mk_tab$P_level, bounding_box=bounding_box, zoom=zoom, text="P-value")
 }

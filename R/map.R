@@ -4,6 +4,8 @@
 #' @param colours vector of things to colour, in same order as locations
 #' @param bounding_box bottom left long, bottom left lat, top right long, top right lat (vector of length 4); W longs negative
 #' @param zoom stamen maps zoom (higher=better resolution but more tiles to get), default 5
+#' @param text text to go above the legend
+#'
 #' @return map showing points labelled by location
 #'
 #' @author Ken Butler, \email{butler@utsc.utoronto.ca}
@@ -13,10 +15,10 @@
 #'
 #' @export
 #'
-draw_map=function(locations, colours=NULL, size=NULL, bounding_box, zoom=5) {
+draw_map=function(locations, colours=NULL, size=NULL, bounding_box, zoom=5, text=NULL) {
   the_map=get_stamenmap(bbox=bounding_box, zoom=zoom, maptype="toner-lite")
   ggmap(the_map) +
     geom_point(data=locations, aes(x=-Longitude, y=Latitude, colour=colours, size=size)) +
     geom_text_repel(data=locations, aes(x=-Longitude, y=Latitude, label=Location)) +
-    xlab("Longitude") + ylab("Latitude")
+    xlab("Longitude") + ylab("Latitude") + labs(colour=text)
 }

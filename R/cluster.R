@@ -93,5 +93,5 @@ k_means=function(d, n_cluster){
 #' @export
 #'
 map_cluster=function(clusters, locations, bounding_box, zoom) {
-  draw_map(locations, as.factor(clusters), bounding_box=bounding_box, zoom=zoom)
+  draw_map(locations, as.factor(clusters), bounding_box=bounding_box, zoom=zoom, text="Cluster")
 }

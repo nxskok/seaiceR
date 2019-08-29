@@ -5,7 +5,7 @@
 \title{Map of locations with colours and/or sizes}
 \usage{
 draw_map(locations, colours = NULL, size = NULL, bounding_box,
-  zoom = 5)
+  zoom = 5, text)
 }
 \arguments{
 \item{locations}{data frame with columns Location, Longitude, Latitude}
@@ -15,6 +15,8 @@ draw_map(locations, colours = NULL, size = NULL, bounding_box,
 \item{bounding_box}{bottom left long, bottom left lat, top right long, top right lat (vector of length 4); W longs negative}
 
 \item{zoom}{stamen maps zoom (higher=better resolution but more tiles to get), default 5}
+
+\item{text}{text to go above the legend}
 }
 \value{
 map showing points labelled by location
