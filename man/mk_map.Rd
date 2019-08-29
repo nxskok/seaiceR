@@ -15,6 +15,9 @@ mk_map(d_long, locations, bounding_box, zoom = 5)
 
 \item{zoom}{zoom factor for stamen map (default 5)}
 }
+\value{
+ggplot map of locations coloured by P-level
+}
 \description{
 Map of Mann-Kendall significance levels
 }

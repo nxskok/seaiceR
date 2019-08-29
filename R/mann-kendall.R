@@ -57,7 +57,7 @@ mk_sig=function(d_long, alpha=0.05) {
 #' @param bounding_box bottom left long, lat, top right long, lat (as a vector)
 #' @param zoom zoom factor for stamen map (default 5)
 #'
-#' @result ggplot map of locations coloured by P-level
+#' @return ggplot map of locations coloured by P-level
 #'
 #' @author Ken Butler, \email{butler@utsc.utoronto.ca}
 #'
