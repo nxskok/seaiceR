@@ -21,7 +21,8 @@ Imports:
     ggmap,
     ggrepel,
     forcats,
-    ggdendro
+    ggdendro,
+    dendextend
 URL: https://github.com/nxskok/seaiceR
 BugReports: https://github.com/nxskok/seaiceR/issues
 RoxygenNote: 6.1.1

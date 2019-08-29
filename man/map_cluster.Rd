@@ -4,7 +4,7 @@
 \alias{map_cluster}
 \title{Map clusters from cluster analysis}
 \usage{
-map_cluster(clusters, locations, bounding_box, zoom)
+map_cluster(clusters, locations, bounding_box, zoom, title)
 }
 \arguments{
 \item{clusters}{cluster output from cluster analysis}
@@ -23,8 +23,8 @@ Map clusters from cluster analysis
 }
 \examples{
 
-map_cluster(ward(nine_points, T, 3)$clusters, nine_points_locations, bounding_box=c(-87.5, 71, -82.5, 74), zoom=6)
-map_cluster(k_means(nine_points, 4)$clusters, nine_points_locations, bounding_box=c(-87.5, 71, -82.5, 74), zoom=6)
+map_cluster(ward(nine_points, T, 3)$clusters, nine_points_locations, bounding_box=c(-87.5, 71, -82.5, 74), zoom=6, title="Cluster map (Ward's method)")
+map_cluster(k_means(nine_points, 4)$clusters, nine_points_locations, bounding_box=c(-87.5, 71, -82.5, 74), zoom=6, title="Cluster map (K-means method)")
 
 }
 \author{

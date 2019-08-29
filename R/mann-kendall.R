@@ -21,7 +21,7 @@ mann_kendall_table=function(d_long){
   d_long %>%
     tidyr::drop_na() %>%
     tidyr::nest(-location) %>%
-    dplyr::mutate(MK=purrr::map(data, ~as_tibble(mkac::kendall_Z_adjusted(.$day)))) %>%
+    dplyr::mutate(MK=purrr::map(data, ~tibble::as_tibble(mkac::kendall_Z_adjusted(.$day)))) %>%
     tidyr::unnest(MK) %>%
     dplyr::mutate(P_value_2=format(P_value, scientific=F)) %>%
     dplyr::mutate(P_value_adj_2=format(P_value_adj, scientific=F)) %>%
@@ -67,5 +67,6 @@ mk_sig=function(d_long, alpha=0.05) {
 #'
 mk_map=function(d_long, locations, bounding_box, zoom=5) {
   mk_tab=mann_kendall_table(d_long)
-  draw_map(locations, colours=mk_tab$P_level, bounding_box=bounding_box, zoom=zoom, text="P-value")
+  draw_map(locations=locations, colours=mk_tab$P_level, bounding_box=bounding_box, zoom=zoom,
+           text="P-value", title="Mann-Kendall significance map")
 }

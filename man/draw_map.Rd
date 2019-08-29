@@ -4,19 +4,21 @@
 \alias{draw_map}
 \title{Map of locations with colours and/or sizes}
 \usage{
-draw_map(locations, colours = NULL, size = NULL, bounding_box,
-  zoom = 5, text)
+draw_map(locations, colours = NULL, size = NULL, bounding_box = F,
+  zoom = 5, text = NULL, title = NULL)
 }
 \arguments{
 \item{locations}{data frame with columns Location, Longitude, Latitude}
 
 \item{colours}{vector of things to colour, in same order as locations}
 
-\item{bounding_box}{bottom left long, bottom left lat, top right long, top right lat (vector of length 4); W longs negative}
+\item{bounding_box}{If FALSE (default), determined from locations; else bottom left long, bottom left lat, top right long, top right lat (vector of length 4); W longs negative}
 
 \item{zoom}{stamen maps zoom (higher=better resolution but more tiles to get), default 5}
 
 \item{text}{text to go above the legend}
+
+\item{title}{title for the plot}
 }
 \value{
 map showing points labelled by location

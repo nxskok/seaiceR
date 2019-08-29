@@ -30,7 +30,7 @@ theil_sen_slopes=function(d_long) {
 #'
 theil_sen_summary=function(d_long) {
   slopes <- seaiceR::theil_sen_slopes(d_long)
-  slopes %>% summarize(
+  slopes %>% dplyr::summarize(
     mean=mean(theil_sen),
     SD=sd(theil_sen),
     min=min(theil_sen),
@@ -59,6 +59,7 @@ theil_sen_summary=function(d_long) {
 #'
 theil_sen_map=function(d_long, locations, bounding_box, zoom=5, scaling=1) {
   slopes <- seaiceR::theil_sen_slopes(d_long)
-  draw_map(locations=locations, colour="red", size=slopes$theil_sen*scaling, bounding_box, zoom) +
-    guides(colour=F)
+  draw_map(locations=locations, colour="red",
+           size=slopes$theil_sen*scaling, bounding_box=bounding_box, zoom=zoom, title="Theil-Sen slopes map") +
+    ggplot2::guides(colour=F)
 }
