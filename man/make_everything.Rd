@@ -4,7 +4,8 @@
 \alias{make_everything}
 \title{Make the whole analysis for a data set}
 \usage{
-make_everything(d, locations, bounding_box, zoom, scaling, n_cluster)
+make_everything(d, locations, bounding_box = F, zoom = 5,
+  scaling = 1, n_cluster)
 }
 \arguments{
 \item{d}{wide-format data set (see make_wide)}

@@ -211,7 +211,8 @@ There is a lot of output. Specifically, in order:
     as negative numbers. This package uses Stamen maps, which come out
     with exactly the bounding box you ask for (unlike Google maps, which
     always come out square). Enthusiasts of Stamen maps may note that I
-    chose “toner-lite” for this package.
+    chose “toner-lite” for this package. I wanted the sea to be a
+    neutral enough background to see colours against.
   - if the map looks too “fuzzy” and could stand to be sharpened up,
     enter a value for `zoom`. This can be anything between 1 and 18; a
     higher value will be sharper, but entails downloading more map
