@@ -15,13 +15,13 @@
 ward=function(d, remove_missing=T, n_cluster) {
   if (remove_missing) {
     # take out missing
-    d %>% drop_na() -> d1
+    d %>% tidyr::drop_na() -> d1
     label="missings excluded"
   } else {
     label="missings included"
     d1 <- d
   }
-  d1 %>% select(-year) %>% t() %>% dist() -> d2
+  d1 %>% dplyr::select(-year) %>% t() %>% dist() -> d2
   bu.hc=hclust(d2,method="ward.D")
   # plot(bu.hc,xlab=label)
   # rect.hclust(bu.hc,n_cluster)
@@ -30,11 +30,11 @@ ward=function(d, remove_missing=T, n_cluster) {
   clust.df <- data.frame(label=names(clusters), cluster=factor(clusters))
   # dendr[["labels"]] has the labels, merge with clust.df based on label column
   dendr[["labels"]] <- merge(dendr[["labels"]],clust.df, by="label")
-  ggplot() +
-    geom_segment(data=ggdendro::segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) +
-    geom_text(data=ggdendro::label(dendr), aes(x, y-10, label=label, hjust=0, colour=factor(clusters)), size=3) +
-    guides(colour=F) +
-    theme(axis.line.x=element_blank(),
+  ggplot2::ggplot() +
+    ggplot2::geom_segment(data=ggdendro::segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) +
+    ggplot2::geom_text(data=ggdendro::label(dendr), aes(x, y-10, label=label, hjust=0, colour=factor(clusters)), size=3) +
+    ggplot2::guides(colour=F) +
+    ggplot2::theme(axis.line.x=element_blank(),
           axis.ticks.x=element_blank(),
           axis.text.x=element_blank(),
           axis.title.x=element_blank(),
@@ -59,16 +59,16 @@ ward=function(d, remove_missing=T, n_cluster) {
 #'
 k_means=function(d, n_cluster){
   # get rid of missings (and transpose)
-  d %>% drop_na() %>% select(-year) %>% t() -> vv
+  d %>% tidyr::drop_na() %>% select(-year) %>% t() -> vv
   max_clusters=min(15, nrow(vv)-1)
   # scree plot
-  tibble(clusters=2:max_clusters) %>%
-    mutate(km=map(clusters, ~kmeans(vv, ., nstart=40))) %>%
-    mutate(ss=map_dbl(km, "tot.withinss")) -> twss
-  g=ggplot(twss, aes(x=clusters, y=ss))+geom_point()+geom_line()
+  tibble::tibble(clusters=2:max_clusters) %>%
+    dplyr::mutate(km=purrr::map(clusters, ~kmeans(vv, ., nstart=40))) %>%
+    dplyr::mutate(ss=purrr::map_dbl(km, "tot.withinss")) -> twss
+  g=ggplot2::ggplot(twss, aes(x=clusters, y=ss))+geom_point()+geom_line()
   # get chosen number of clusters
   vv %>% kmeans(n_cluster, nstart=40) -> kmm
-  clusters=enframe(kmm$cluster,name="location", value="cluster")
+  clusters=tibble::enframe(kmm$cluster,name="location", value="cluster")
   clusters=kmm$cluster
   names(clusters)=1:length(clusters)
   list(scree=g, clusters=clusters)
