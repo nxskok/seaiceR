@@ -123,12 +123,14 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list: Mann-Kendall result table, summary of significance, Theil-Sen slopes table, summary.</p>
+    <p>list: time trend plots with lowess curves and with linear trends, Mann-Kendall result table, summary of significance, Theil-Sen slopes table, summary.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>make_temporal</span>(<span class='no'>nine_points</span>)</div><div class='output co'>#&gt; [[1]]
+<span class='fu'>make_temporal</span>(<span class='no'>nine_points</span>)</div><div class='output co'>#&gt; [[1]]</div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 3 rows containing non-finite values (stat_smooth).</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 3 rows containing missing values (geom_point).</span></div><div class='img'><img src='make_temporal-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+#&gt; [[2]]</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 3 rows containing non-finite values (stat_smooth).</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 3 rows containing missing values (geom_point).</span></div><div class='img'><img src='make_temporal-2.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+#&gt; [[3]]
 #&gt; <span style='color: #949494;'># A tibble: 9 x 10</span><span>
 #&gt;   location data      z z_star ratio P_value P_value_adj P_value_2 P_value_adj_2
 #&gt;      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lis&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        
@@ -143,14 +145,14 @@
 #&gt; </span><span style='color: #BCBCBC;'>9</span><span>        9 </span><span style='color: #949494;'>&lt;tib</span><span>…  3.60   3.60 1     3.19</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>-4</span><span>   0.000</span><span style='text-decoration: underline;'>319</span><span>  0.000318… 0.00031863801
 #&gt; </span><span style='color: #949494;'># … with 1 more variable: P_level </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>
 #&gt; 
-#&gt; [[2]]
+#&gt; [[4]]
 #&gt; </span><span style='color: #949494;'># A tibble: 2 x 2</span><span>
 #&gt;   `P_value_adj &lt;= alpha`     n
 #&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>                  </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
 #&gt; </span><span style='color: #BCBCBC;'>1</span><span> FALSE                      1
 #&gt; </span><span style='color: #BCBCBC;'>2</span><span> TRUE                       8
 #&gt; 
-#&gt; [[3]]
+#&gt; [[5]]
 #&gt; </span><span style='color: #949494;'># A tibble: 9 x 3</span><span>
 #&gt;   location data              theil_sen
 #&gt;      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;list&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
@@ -164,7 +166,7 @@
 #&gt; </span><span style='color: #BCBCBC;'>8</span><span>        8 </span><span style='color: #949494;'>&lt;tibble [48 × 2]&gt;</span><span>     0.438
 #&gt; </span><span style='color: #BCBCBC;'>9</span><span>        9 </span><span style='color: #949494;'>&lt;tibble [48 × 2]&gt;</span><span>     0.583
 #&gt; 
-#&gt; [[4]]
+#&gt; [[6]]
 #&gt; </span><span style='color: #949494;'># A tibble: 1 x 7</span><span>
 #&gt;    mean    SD   min    Q1 median    Q3   max
 #&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>

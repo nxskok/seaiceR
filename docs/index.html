@@ -101,55 +101,67 @@
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; Source : http://tile.stamen.com/toner-lite/5/8/6.png</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; $temporal</span></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; $temporal[[1]]</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; # A tibble: 9 x 10</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;   location data      z z_star ratio P_value P_value_adj P_value_2</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;      &lt;dbl&gt; &lt;lis&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;    </span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; 1        1 &lt;tib…  3.00   3.00 1     2.71e-3   0.00271   0.002711…</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; 2        2 &lt;tib…  3.23   3.23 1     1.25e-3   0.00125   0.001246…</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; 3        3 &lt;tib…  2.77   2.77 1     5.61e-3   0.00561   0.005614…</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; 4        4 &lt;tib…  2.90   2.90 1     3.76e-3   0.00376   0.003761…</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; 5        5 &lt;tib…  2.97   3.95 0.564 2.99e-3   0.0000771 0.002991…</span></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; 6        6 &lt;tib…  3.26   3.26 1     1.11e-3   0.00111   0.001106…</span></a>
-<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; 7        7 &lt;tib…  2.10   1.85 1.28  3.59e-2   0.0641    0.035942…</span></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; 8        8 &lt;tib…  2.76   2.10 1.74  5.71e-3   0.0361    0.005706…</span></a>
-<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt; 9        9 &lt;tib…  3.60   3.60 1     3.19e-4   0.000319  0.000318…</span></a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt; # … with 2 more variables: P_value_adj_2 &lt;chr&gt;, P_level &lt;fct&gt;</span></a>
-<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co">#&gt; $temporal[[2]]</span></a>
-<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co">#&gt; # A tibble: 2 x 2</span></a>
-<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="co">#&gt;   `P_value_adj &lt;= alpha`     n</span></a>
-<a class="sourceLine" id="cb2-24" data-line-number="24"><span class="co">#&gt;   &lt;lgl&gt;                  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb2-25" data-line-number="25"><span class="co">#&gt; 1 FALSE                      1</span></a>
-<a class="sourceLine" id="cb2-26" data-line-number="26"><span class="co">#&gt; 2 TRUE                       8</span></a>
-<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">#&gt; $temporal[[3]]</span></a>
-<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">#&gt; # A tibble: 9 x 3</span></a>
-<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="co">#&gt;   location data              theil_sen</span></a>
-<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="co">#&gt;      &lt;dbl&gt; &lt;list&gt;                &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="co">#&gt; 1        1 &lt;tibble [47 × 2]&gt;     0.5  </span></a>
-<a class="sourceLine" id="cb2-33" data-line-number="33"><span class="co">#&gt; 2        2 &lt;tibble [47 × 2]&gt;     0.583</span></a>
-<a class="sourceLine" id="cb2-34" data-line-number="34"><span class="co">#&gt; 3        3 &lt;tibble [47 × 2]&gt;     0.5  </span></a>
-<a class="sourceLine" id="cb2-35" data-line-number="35"><span class="co">#&gt; 4        4 &lt;tibble [48 × 2]&gt;     0.5  </span></a>
-<a class="sourceLine" id="cb2-36" data-line-number="36"><span class="co">#&gt; 5        5 &lt;tibble [48 × 2]&gt;     0.56 </span></a>
-<a class="sourceLine" id="cb2-37" data-line-number="37"><span class="co">#&gt; 6        6 &lt;tibble [48 × 2]&gt;     0.613</span></a>
-<a class="sourceLine" id="cb2-38" data-line-number="38"><span class="co">#&gt; 7        7 &lt;tibble [48 × 2]&gt;     0.789</span></a>
-<a class="sourceLine" id="cb2-39" data-line-number="39"><span class="co">#&gt; 8        8 &lt;tibble [48 × 2]&gt;     0.438</span></a>
-<a class="sourceLine" id="cb2-40" data-line-number="40"><span class="co">#&gt; 9        9 &lt;tibble [48 × 2]&gt;     0.583</span></a>
-<a class="sourceLine" id="cb2-41" data-line-number="41"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb2-42" data-line-number="42"><span class="co">#&gt; $temporal[[4]]</span></a>
-<a class="sourceLine" id="cb2-43" data-line-number="43"><span class="co">#&gt; # A tibble: 1 x 7</span></a>
-<a class="sourceLine" id="cb2-44" data-line-number="44"><span class="co">#&gt;    mean    SD   min    Q1 median    Q3   max</span></a>
-<a class="sourceLine" id="cb2-45" data-line-number="45"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb2-46" data-line-number="46"><span class="co">#&gt; 1 0.563 0.101 0.438   0.5   0.56 0.583 0.789</span></a>
-<a class="sourceLine" id="cb2-47" data-line-number="47"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb2-48" data-line-number="48"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb2-49" data-line-number="49"><span class="co">#&gt; $spatial</span></a>
-<a class="sourceLine" id="cb2-50" data-line-number="50"><span class="co">#&gt; $spatial[[1]]</span></a>
-<a class="sourceLine" id="cb2-51" data-line-number="51"><span class="co">#&gt; Warning in min(x): no non-missing arguments to min; returning Inf</span></a>
-<a class="sourceLine" id="cb2-52" data-line-number="52"><span class="co">#&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</span></a>
-<a class="sourceLine" id="cb2-53" data-line-number="53"><span class="co">#&gt; Warning in min(x): no non-missing arguments to min; returning Inf</span></a>
-<a class="sourceLine" id="cb2-54" data-line-number="54"><span class="co">#&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; Warning: Removed 3 rows containing non-finite values (stat_smooth).</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; Warning: Removed 3 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
+<pre><code>#&gt; 
+#&gt; $temporal[[2]]
+#&gt; Warning: Removed 3 rows containing non-finite values (stat_smooth).
+
+#&gt; Warning: Removed 3 rows containing missing values (geom_point).</code></pre>
+<p><img src="reference/figures/README-unnamed-chunk-2-2.png" width="100%"></p>
+<pre><code>#&gt; 
+#&gt; $temporal[[3]]
+#&gt; # A tibble: 9 x 10
+#&gt;   location data      z z_star ratio P_value P_value_adj P_value_2
+#&gt;      &lt;dbl&gt; &lt;lis&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;    
+#&gt; 1        1 &lt;tib…  3.00   3.00 1     2.71e-3   0.00271   0.002711…
+#&gt; 2        2 &lt;tib…  3.23   3.23 1     1.25e-3   0.00125   0.001246…
+#&gt; 3        3 &lt;tib…  2.77   2.77 1     5.61e-3   0.00561   0.005614…
+#&gt; 4        4 &lt;tib…  2.90   2.90 1     3.76e-3   0.00376   0.003761…
+#&gt; 5        5 &lt;tib…  2.97   3.95 0.564 2.99e-3   0.0000771 0.002991…
+#&gt; 6        6 &lt;tib…  3.26   3.26 1     1.11e-3   0.00111   0.001106…
+#&gt; 7        7 &lt;tib…  2.10   1.85 1.28  3.59e-2   0.0641    0.035942…
+#&gt; 8        8 &lt;tib…  2.76   2.10 1.74  5.71e-3   0.0361    0.005706…
+#&gt; 9        9 &lt;tib…  3.60   3.60 1     3.19e-4   0.000319  0.000318…
+#&gt; # … with 2 more variables: P_value_adj_2 &lt;chr&gt;, P_level &lt;fct&gt;
+#&gt; 
+#&gt; $temporal[[4]]
+#&gt; # A tibble: 2 x 2
+#&gt;   `P_value_adj &lt;= alpha`     n
+#&gt;   &lt;lgl&gt;                  &lt;int&gt;
+#&gt; 1 FALSE                      1
+#&gt; 2 TRUE                       8
+#&gt; 
+#&gt; $temporal[[5]]
+#&gt; # A tibble: 9 x 3
+#&gt;   location data              theil_sen
+#&gt;      &lt;dbl&gt; &lt;list&gt;                &lt;dbl&gt;
+#&gt; 1        1 &lt;tibble [47 × 2]&gt;     0.5  
+#&gt; 2        2 &lt;tibble [47 × 2]&gt;     0.583
+#&gt; 3        3 &lt;tibble [47 × 2]&gt;     0.5  
+#&gt; 4        4 &lt;tibble [48 × 2]&gt;     0.5  
+#&gt; 5        5 &lt;tibble [48 × 2]&gt;     0.56 
+#&gt; 6        6 &lt;tibble [48 × 2]&gt;     0.613
+#&gt; 7        7 &lt;tibble [48 × 2]&gt;     0.789
+#&gt; 8        8 &lt;tibble [48 × 2]&gt;     0.438
+#&gt; 9        9 &lt;tibble [48 × 2]&gt;     0.583
+#&gt; 
+#&gt; $temporal[[6]]
+#&gt; # A tibble: 1 x 7
+#&gt;    mean    SD   min    Q1 median    Q3   max
+#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 0.563 0.101 0.438   0.5   0.56 0.583 0.789
+#&gt; 
+#&gt; 
+#&gt; $spatial
+#&gt; $spatial[[1]]
+#&gt; Warning in min(x): no non-missing arguments to min; returning Inf
+#&gt; Warning in max(x): no non-missing arguments to max; returning -Inf
+#&gt; Warning in min(x): no non-missing arguments to min; returning Inf
+#&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</code></pre>
+<p><img src="reference/figures/README-unnamed-chunk-2-3.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[2]]
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
@@ -157,7 +169,7 @@
 #&gt; Warning in min(x): no non-missing arguments to max; returning -Inf
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
 #&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</code></pre>
-<p><img src="reference/figures/README-unnamed-chunk-2-2.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-4.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[3]]
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
@@ -165,10 +177,10 @@
 #&gt; Warning in min(x): no non-missing arguments to max; returning -Inf
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
 #&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</code></pre>
-<p><img src="reference/figures/README-unnamed-chunk-2-3.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-5.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[4]]</code></pre>
-<p><img src="reference/figures/README-unnamed-chunk-2-4.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-6.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[5]]
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
@@ -176,10 +188,10 @@
 #&gt; Warning in min(x): no non-missing arguments to max; returning -Inf
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
 #&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</code></pre>
-<p><img src="reference/figures/README-unnamed-chunk-2-5.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-7.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[6]]</code></pre>
-<p><img src="reference/figures/README-unnamed-chunk-2-6.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-8.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[7]]
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
@@ -187,10 +199,10 @@
 #&gt; Warning in min(x): no non-missing arguments to max; returning -Inf
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
 #&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</code></pre>
-<p><img src="reference/figures/README-unnamed-chunk-2-7.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-9.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[8]]</code></pre>
-<p><img src="reference/figures/README-unnamed-chunk-2-8.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-10.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[9]]
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
@@ -198,10 +210,11 @@
 #&gt; Warning in min(x): no non-missing arguments to max; returning -Inf
 #&gt; Warning in min(x): no non-missing arguments to min; returning Inf
 #&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</code></pre>
-<p><img src="reference/figures/README-unnamed-chunk-2-9.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-11.png" width="100%"></p>
 <p>Of course, the initial number of clusters will be a complete guess, but the output includes a scree plot and dendrograms, so <code>make_everything</code> can be run a second time with an improved number of clusters.</p>
 <p>There is a lot of output. Specifically, in order:</p>
 <ul>
+<li>Time trend graphs for each location, first with lowess trends and second with linear trends.</li>
 <li>Mann-Kendall temporal trend analysis for each location, including adjustment for autocorrelation. The last column summarizes the P-value as less than 0.01, between 0.01 and 0.05, between 0.05 and 0.10, greater than 0.10 (for use in the map later).</li>
 <li>Summary of how many Mann-Kendall tests have P-value 0.05 or less.</li>
 <li>Theil-Sen slopes per year, for each location.</li>
@@ -224,8 +237,14 @@
 <li>if the map looks too “fuzzy” and could stand to be sharpened up, enter a value for <code>zoom</code>. This can be anything between 1 and 18; a higher value will be sharper, but entails downloading more map tiles. The default is 5.</li>
 <li>if you want all the points on the Theil-Sen plot to be bigger or smaller, enter a value for <code>scaling</code>. The default is 1, so a value like 2 will make all the points bigger and a value like 0.5 will make them all smaller.</li>
 </ul>
+<p>If you want an individual time trend graph (eg. to copy into another document), get it like this:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="reference/time_trend_single.html">time_trend_single</a></span>(nine_points, <span class="dt">loc=</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></a></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
+<p>or like this to get a linear trend:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw"><a href="reference/time_trend_single.html">time_trend_single</a></span>(nine_points, <span class="dt">loc=</span><span class="dv">6</span>, <span class="dt">lowess=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
 <p>Don’t be afraid to run several times until you have output that looks nice. R can take it. (There is some repetitiveness in the calculation anyway).</p>
-<p>oh, and I need to include time trend graphs as well.</p>
 </div>
 </div>
   </div>

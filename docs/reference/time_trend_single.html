@@ -110,14 +110,14 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>time_trend_single</span>(<span class='no'>d_long</span>, <span class='kw'>lowess</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>loc</span>)</pre>
+    <pre class="usage"><span class='fu'>time_trend_single</span>(<span class='no'>d</span>, <span class='kw'>lowess</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>loc</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>d_long</th>
-      <td><p>data frame in long format (see make_long)</p></td>
+      <th>d</th>
+      <td><p>data frame in wide format (see make_wide)</p></td>
     </tr>
     <tr>
       <th>lowess</th>
@@ -135,7 +135,7 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>time_trend_single</span>(<span class='no'>nine_points_long</span>, <span class='kw'>loc</span><span class='kw'>=</span><span class='fl'>6</span>) <span class='co'># with lowess</span></div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='img'><img src='time_trend_single-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>time_trend_single</span>(<span class='no'>nine_points_long</span>, <span class='kw'>lowess</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>loc</span><span class='kw'>=</span><span class='fl'>6</span>) <span class='co'># with line</span></div><div class='img'><img src='time_trend_single-2.png' alt='' width='700' height='433' /></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>time_trend_single</span>(<span class='no'>nine_points</span>, <span class='kw'>loc</span><span class='kw'>=</span><span class='fl'>6</span>) <span class='co'># with lowess</span></div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='img'><img src='time_trend_single-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>time_trend_single</span>(<span class='no'>nine_points</span>, <span class='kw'>lowess</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>loc</span><span class='kw'>=</span><span class='fl'>6</span>) <span class='co'># with line</span></div><div class='img'><img src='time_trend_single-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
