@@ -7,11 +7,11 @@
 ward(d, remove_missing = T, n_cluster)
 }
 \arguments{
+\item{d}{data frame in wide format (see make_wide)}
+
 \item{remove_missing}{whether or not to remove missing data}
 
 \item{n_cluster}{number of clusters to obtain}
-
-\item{data}{frame in wide format (see make_wide)}
 }
 \value{
 list: dendrogram, cluster memberships

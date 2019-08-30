@@ -50,6 +50,10 @@ library(seaiceR)
 make_everything(nine_points, nine_points_locations, n_cluster=4)
 #> Source : http://tile.stamen.com/toner-lite/5/8/5.png
 #> Source : http://tile.stamen.com/toner-lite/5/8/6.png
+#> Joining, by = "obs"
+#> Joining, by = "label"
+#> Joining, by = "obs"
+#> Joining, by = "label"
 #> $temporal
 #> $temporal[[1]]
 #> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
@@ -142,6 +146,7 @@ make_everything(nine_points, nine_points_locations, n_cluster=4)
 
     #> 
     #> $spatial[[4]]
+    #> Warning: Removed 1 rows containing missing values (geom_rect).
 
 <img src="man/figures/README-unnamed-chunk-2-6.png" width="100%" />
 
@@ -157,6 +162,7 @@ make_everything(nine_points, nine_points_locations, n_cluster=4)
 
     #> 
     #> $spatial[[6]]
+    #> Warning: Removed 1 rows containing missing values (geom_rect).
 
 <img src="man/figures/README-unnamed-chunk-2-8.png" width="100%" />
 
@@ -208,10 +214,9 @@ There is a lot of output. Specifically, in order:
   - Ward’s cluster analysis with missing values included: a dendrogram
     followed by a map with the locations colour-coded by cluster.
   - A repeat of the above but with missing values removed first: a
-    dendrogram followed by a map. I’m not very happy with the
-    dendrograms; I like the `rect.hclust` output with rectangles better.
-    Here, the clusters are indicated by the colour of the labels at the
-    bottom.
+    dendrogram followed by a map. I rewrote the dendrogram code to use
+    `dendrogram` from `ggdendro`, but with `rect.hclust`-like rectangles
+    to show which location is in which cluster.
   - A scree plot for determining the number of clusters in a K-means
     analysis. This one has an elbow at 4, indicating 4 clusters.
   - A map of the locations with the K-means clusters colour-coded.

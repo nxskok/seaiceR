@@ -58,7 +58,7 @@ There is a lot of output. Specifically, in order:
 - A map of the locations with Mann-Kendall significance colour-coded.
 - A map of the locations with the size of the Theil-Sen slope indicated by the size of the point.
 - Ward's cluster analysis with missing values included: a dendrogram followed by a map with the locations colour-coded by cluster.
-- A repeat of the above but with missing values removed first: a dendrogram followed by a map. I'm not very happy with the dendrograms; I like the `rect.hclust` output with rectangles better. Here, the clusters are indicated by the colour of the labels at the bottom.
+- A repeat of the above but with missing values removed first: a dendrogram followed by a map. I rewrote the dendrogram code to use `dendrogram` from `ggdendro`, but with `rect.hclust`-like rectangles to show which location is in which cluster.
 - A scree plot for determining the number of clusters in a K-means analysis. This one has an elbow at 4, indicating 4 clusters.
 - A map of the locations with the K-means clusters colour-coded.
 

@@ -1,6 +1,42 @@
+#' Dendrogram with clusters shown by rectangles (like rect.hclust)
+#'
+#' @param object cluster object from hclust
+#' @param n_cluster number of clusters to show
+#'
+#' @return ggplot like output from rect.hclust
+#'
+#' @author Ken Butler, \email{butler@utsc.utoronto.ca}
+#'
+#' @examples
+#' rect_hclust(ward(nine_points, T, 3)$object, 4)
+#'
+#' @export
+#'
+rect_hclust=function(object, n_cluster) {
+  # height first
+  tibble::enframe(object$height, value="height") %>%
+    dplyr::mutate(clusters=max(name)+2-name) -> h
+  h %>% dplyr::filter(dplyr::between(clusters, n_cluster, n_cluster+1)) %>%
+    dplyr::summarize(mh=mean(height)) %>%  dplyr::pull(mh) -> rect_height
+  # cluster info, use to make box x-boundaries
+  cutree(object, k=n_cluster) %>% tibble::enframe(name="label", value="cluster") -> d1
+  object$labels %>% tibble::enframe(name="obs", value="label") -> d2
+  object$order %>% tibble::enframe(name="ordered", value="obs") -> d3
+  d3 %>% dplyr::left_join(d2) %>% dplyr::left_join(d1) -> cluster_info
+  cluster_info %>%
+    dplyr::mutate(prev_cluster=dplyr::lag(cluster)) %>%
+    dplyr::mutate(diff_from_prev=(cluster!=prev_cluster)) -> thing
+  thing %>% dplyr::filter(diff_from_prev) %>%
+    dplyr::pull(ordered) -> brks
+  brks <- c(1, brks, nrow(cluster_info)+1)-0.5
+  tibble::tibble(w=brks) %>%
+    dplyr::mutate(w_next=lead(w), h_min=0, h_max=rect_height) -> rectangles
+  ggdendro::ggdendrogram(object) +
+    ggplot2::geom_rect(data=rectangles, ggplot2::aes(xmin=w, xmax=w_next, ymin=h_min, ymax=h_max), colour="red", alpha=0.1)
+}
 #' Hierarchical (Ward) cluster analysis
 #'
-#' @param data frame in wide format (see make_wide)
+#' @param d data frame in wide format (see make_wide)
 #' @param remove_missing whether or not to remove missing data
 #' @param n_cluster number of clusters to obtain
 #' @return list: dendrogram, cluster memberships
@@ -23,23 +59,8 @@ ward=function(d, remove_missing=T, n_cluster) {
   }
   d1 %>% dplyr::select(-year) %>% t() %>% dist() -> d2
   bu.hc=hclust(d2,method="ward.D")
-  # plot(bu.hc,xlab=label)
-  # rect.hclust(bu.hc,n_cluster)
-  clusters=cutree(bu.hc,k=n_cluster)
-  dendr <- ggdendro::dendro_data(bu.hc)
-  clust.df <- data.frame(label=names(clusters), cluster=factor(clusters))
-  # dendr[["labels"]] has the labels, merge with clust.df based on label column
-  dendr[["labels"]] <- merge(dendr[["labels"]],clust.df, by="label")
-  ggplot2::ggplot() +
-    ggplot2::geom_segment(data=ggdendro::segment(dendr), ggplot2::aes(x=x, y=y, xend=xend, yend=yend)) +
-    ggplot2::geom_text(data=ggdendro::label(dendr), ggplot2::aes(x, y-10, label=label, hjust=0, colour=factor(clusters)), size=3) +
-    ggplot2::guides(colour=F) +
-    ggplot2::theme(axis.line.x=ggplot2::element_blank(),
-          axis.ticks.x=ggplot2::element_blank(),
-          axis.text.x=ggplot2::element_blank(),
-          axis.title.x=ggplot2::element_blank(),
-          panel.background=ggplot2::element_rect(fill="white"),
-          panel.grid=ggplot2::element_blank()) -> g
+  g <- rect_hclust(bu.hc, n_cluster)
+  clusters <- cutree(bu.hc, n_cluster)
   list(dendrogram=g, clusters=clusters, object=bu.hc)
 }
 

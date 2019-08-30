@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Map clusters from cluster analysis — map_cluster • seaiceR</title>
+<title>Dendrogram with clusters shown by rectangles (like rect.hclust) — rect_hclust • seaiceR</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Map clusters from cluster analysis — map_cluster" />
+<meta property="og:title" content="Dendrogram with clusters shown by rectangles (like rect.hclust) — rect_hclust" />
 
-<meta property="og:description" content="Map clusters from cluster analysis" />
+<meta property="og:description" content="Dendrogram with clusters shown by rectangles (like rect.hclust)" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -99,48 +99,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Map clusters from cluster analysis</h1>
+    <h1>Dendrogram with clusters shown by rectangles (like rect.hclust)</h1>
     <small class="dont-index">Source: <a href='https://github.com/nxskok/seaiceR/blob/master/R/cluster.R'><code>R/cluster.R</code></a></small>
-    <div class="hidden name"><code>map_cluster.Rd</code></div>
+    <div class="hidden name"><code>rect_hclust.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Map clusters from cluster analysis</p>
+    <p>Dendrogram with clusters shown by rectangles (like rect.hclust)</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>map_cluster</span>(<span class='no'>clusters</span>, <span class='no'>locations</span>, <span class='no'>bounding_box</span>, <span class='no'>zoom</span>, <span class='no'>title</span>)</pre>
+    <pre class="usage"><span class='fu'>rect_hclust</span>(<span class='no'>object</span>, <span class='no'>n_cluster</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>clusters</th>
-      <td><p>cluster output from cluster analysis</p></td>
+      <th>object</th>
+      <td><p>cluster object from hclust</p></td>
     </tr>
     <tr>
-      <th>locations</th>
-      <td><p>data frame of lats and longs for locations (columns Location, Latitude, Longitude)</p></td>
-    </tr>
-    <tr>
-      <th>bounding_box</th>
-      <td><p>(long and lat of bottom left, long and lat of top right)</p></td>
-    </tr>
-    <tr>
-      <th>zoom</th>
-      <td><p>for stamen map (defaults to 5)</p></td>
+      <th>n_cluster</th>
+      <td><p>number of clusters to show</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>map of locations coloured by cluster</p>
+    <p>ggplot like output from rect.hclust</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'>map_cluster</span>(<span class='fu'><a href='ward.html'>ward</a></span>(<span class='no'>nine_points</span>, <span class='no'>T</span>, <span class='fl'>3</span>)$<span class='no'>clusters</span>, <span class='no'>nine_points_locations</span>, <span class='kw'>bounding_box</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(-<span class='fl'>87.5</span>, <span class='fl'>71</span>, -<span class='fl'>82.5</span>, <span class='fl'>74</span>), <span class='kw'>zoom</span><span class='kw'>=</span><span class='fl'>6</span>, <span class='kw'>title</span><span class='kw'>=</span><span class='st'>"Cluster map (Ward's method)"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: the condition has length &gt; 1 and only the first element will be used</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "obs"</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "label"</span></div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to min; returning Inf</span></div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to max; returning -Inf</span></div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to min; returning Inf</span></div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to max; returning -Inf</span></div><div class='img'><img src='map_cluster-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>map_cluster</span>(<span class='fu'><a href='k_means.html'>k_means</a></span>(<span class='no'>nine_points</span>, <span class='fl'>4</span>)$<span class='no'>clusters</span>, <span class='no'>nine_points_locations</span>, <span class='kw'>bounding_box</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(-<span class='fl'>87.5</span>, <span class='fl'>71</span>, -<span class='fl'>82.5</span>, <span class='fl'>74</span>), <span class='kw'>zoom</span><span class='kw'>=</span><span class='fl'>6</span>, <span class='kw'>title</span><span class='kw'>=</span><span class='st'>"Cluster map (K-means method)"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: the condition has length &gt; 1 and only the first element will be used</span></div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to min; returning Inf</span></div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to max; returning -Inf</span></div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to min; returning Inf</span></div><div class='output co'>#&gt; <span class='warning'>Warning: no non-missing arguments to max; returning -Inf</span></div><div class='img'><img src='map_cluster-2.png' alt='' width='700' height='433' /></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>rect_hclust</span>(<span class='fu'><a href='ward.html'>ward</a></span>(<span class='no'>nine_points</span>, <span class='no'>T</span>, <span class='fl'>3</span>)$<span class='no'>object</span>, <span class='fl'>4</span>)</div><div class='output co'>#&gt; <span class='message'>Joining, by = "obs"</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "label"</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "obs"</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "label"</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 1 rows containing missing values (geom_rect).</span></div><div class='img'><img src='rect_hclust-1.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

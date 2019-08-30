@@ -99,11 +99,15 @@
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="reference/make_everything.html">make_everything</a></span>(nine_points, nine_points_locations, <span class="dt">n_cluster=</span><span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; Source : http://tile.stamen.com/toner-lite/5/8/5.png</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; Source : http://tile.stamen.com/toner-lite/5/8/6.png</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; $temporal</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; $temporal[[1]]</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; Warning: Removed 3 rows containing non-finite values (stat_smooth).</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; Warning: Removed 3 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; Joining, by = "obs"</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; Joining, by = "label"</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; Joining, by = "obs"</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; Joining, by = "label"</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; $temporal</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; $temporal[[1]]</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; Warning: Removed 3 rows containing non-finite values (stat_smooth).</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; Warning: Removed 3 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $temporal[[2]]
@@ -179,7 +183,8 @@
 #&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</code></pre>
 <p><img src="reference/figures/README-unnamed-chunk-2-5.png" width="100%"></p>
 <pre><code>#&gt; 
-#&gt; $spatial[[4]]</code></pre>
+#&gt; $spatial[[4]]
+#&gt; Warning: Removed 1 rows containing missing values (geom_rect).</code></pre>
 <p><img src="reference/figures/README-unnamed-chunk-2-6.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[5]]
@@ -190,7 +195,8 @@
 #&gt; Warning in max(x): no non-missing arguments to max; returning -Inf</code></pre>
 <p><img src="reference/figures/README-unnamed-chunk-2-7.png" width="100%"></p>
 <pre><code>#&gt; 
-#&gt; $spatial[[6]]</code></pre>
+#&gt; $spatial[[6]]
+#&gt; Warning: Removed 1 rows containing missing values (geom_rect).</code></pre>
 <p><img src="reference/figures/README-unnamed-chunk-2-8.png" width="100%"></p>
 <pre><code>#&gt; 
 #&gt; $spatial[[7]]
@@ -223,7 +229,7 @@
 <li>A map of the locations with Mann-Kendall significance colour-coded.</li>
 <li>A map of the locations with the size of the Theil-Sen slope indicated by the size of the point.</li>
 <li>Ward’s cluster analysis with missing values included: a dendrogram followed by a map with the locations colour-coded by cluster.</li>
-<li>A repeat of the above but with missing values removed first: a dendrogram followed by a map. I’m not very happy with the dendrograms; I like the <code>rect.hclust</code> output with rectangles better. Here, the clusters are indicated by the colour of the labels at the bottom.</li>
+<li>A repeat of the above but with missing values removed first: a dendrogram followed by a map. I rewrote the dendrogram code to use <code>dendrogram</code> from <code>ggdendro</code>, but with <code>rect.hclust</code>-like rectangles to show which location is in which cluster.</li>
 <li>A scree plot for determining the number of clusters in a K-means analysis. This one has an elbow at 4, indicating 4 clusters.</li>
 <li>A map of the locations with the K-means clusters colour-coded.</li>
 </ul>
