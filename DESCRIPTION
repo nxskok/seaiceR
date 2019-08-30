@@ -1,6 +1,6 @@
 Package: seaiceR
 Title: Analysis of Temporal and Spatial Trends in Sea Ice
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person(given = "Ken",
            family = "Butler",
