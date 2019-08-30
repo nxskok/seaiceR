@@ -11,18 +11,19 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    mkac,
     tidyr,
     dplyr,
     magrittr,
     ggplot2,
     purrr,
-    rworldmap,
     ggmap,
     ggrepel,
     forcats,
     ggdendro,
-    dendextend
+    dendextend,
+    mkac (>= 1.1)
 URL: https://github.com/nxskok/seaiceR
 BugReports: https://github.com/nxskok/seaiceR/issues
 RoxygenNote: 6.1.1
+Remotes: 
+    nxskok/mkac
